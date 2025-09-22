@@ -128,10 +128,9 @@ function App() {
                         </div>
                       ))}
                     </div>
-                    <p>Contact us or book your space today and make your event unforgettable at EkcelEvents. Our team is ready to help you plan, customize, and execute a memorable event experience.</p>
+                    <p>Book your space today and make your event unforgettable at EkcelEvents. Our team is ready to help you plan, customize, and execute a memorable event experience.</p>
                     <div className="cta-buttons">
                       <Link to="/book" className="primary">Book Now</Link>
-                      <Link to="/contact" className="secondary">Contact Us</Link>
                     </div>
                     <div className="cta-contact-info"></div>
                   </section>
