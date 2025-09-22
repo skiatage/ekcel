@@ -1,15 +1,15 @@
+import AdminPanel from './components/AdminPanel';
+import AdminLogin from './components/AdminLogin';
+import MapWidget from './components/MapWidget';
+
+// AdminRoute component for login protection (must be outside App to use hooks)
+import React, { useState } from 'react';
 // ...existing code...
-import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import EventList from './components/EventList';
-import EventDetails from './components/EventDetails';
-import BookingForm from './components/BookingForm';
-import AdminPanel from './components/AdminPanel';
 import ImageCarousel from './components/ImageCarousel';
 import BookNow from './components/BookNow';
 import ContactUs from './components/ContactUs';
-import MobileMenu from './components/MobileMenu';
 import Testimonial from './components/Testimonial';
 
 const initialEvents = [
@@ -17,6 +17,13 @@ const initialEvents = [
   { id: 2, title: 'Music Festival', date: '2025-11-05', location: 'Abuja', description: 'Enjoy live music from top artists.' },
   { id: 3, title: 'Business Summit', date: '2025-12-01', location: 'Port Harcourt', description: 'Networking for business professionals.' },
 ];
+
+function AdminRoute({ events, setEvents }) {
+  const [loggedIn, setLoggedIn] = useState(false);
+  return loggedIn
+    ? <AdminPanel events={events} setEvents={setEvents} />
+    : <AdminLogin onLogin={() => setLoggedIn(true)} />;
+}
 
 function App() {
   // Responsive header state
@@ -121,23 +128,22 @@ function App() {
                         </div>
                       ))}
                     </div>
-                  </section>
-                  <section className="homepage-cta-section">
-                    <div className="cta-content">
-                      <h2>Ready to host your next event?</h2>
-                      <p>Contact us or book your space today and make your event unforgettable at EkcelEvents. Our team is ready to help you plan, customize, and execute a memorable event experience.</p>
-                      <div className="cta-buttons">
-                        <Link to="/book" className="primary">Book Now</Link>
-                        <Link to="/contact" className="secondary">Contact Us</Link>
-                      </div>
-                      <div className="cta-contact-info"></div>
+                    <p>Contact us or book your space today and make your event unforgettable at EkcelEvents. Our team is ready to help you plan, customize, and execute a memorable event experience.</p>
+                    <div className="cta-buttons">
+                      <Link to="/book" className="primary">Book Now</Link>
+                      <Link to="/contact" className="secondary">Contact Us</Link>
                     </div>
+                    <div className="cta-contact-info"></div>
                   </section>
+                  <MapWidget />
                 </>
               ) : null
             } />
             <Route path="/book" element={<BookNow />} />
             <Route path="/testimonial" element={<Testimonial />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/admin" element={<AdminRoute events={events} setEvents={setEvents} />} />
+          {/* End of routes */}
           </Routes>
           <footer className="footer">
             <div className="footer-content">
@@ -153,6 +159,9 @@ function App() {
                 <a href="#" aria-label="Instagram"><i className="ri-instagram-line"></i></a>
                 <a href="#" aria-label="Facebook"><i className="ri-facebook-circle-line"></i></a>
                 <a href="#" aria-label="Twitter"><i className="ri-twitter-x-line"></i></a>
+              </div>
+              <div className="footer-admin">
+                <Link to="/admin" className="admin-toggle">Admin</Link>
               </div>
             </div>
             <small>&copy; 2025 EkcelEvents. All rights reserved.</small>
