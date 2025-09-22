@@ -15,20 +15,23 @@
   }
   #root, .App {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     padding: 1rem 0.5rem;
     box-sizing: border-box;
   }
   .header-content, .footer-content, .events-header, .events-container, .features-container {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     box-sizing: border-box;
   }
   .homepage, .book-now-page, .contact-us-page, .event-details, .booking-form, .admin-panel {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     box-sizing: border-box;
