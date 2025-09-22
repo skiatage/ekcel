@@ -1,3 +1,39 @@
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #007bff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+@media (max-width: 900px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #root, .App {
+    width: 100%;
+    max-width: none;
+    padding: 1rem 0.5rem;
+    box-sizing: border-box;
+  }
+  .header-content, .footer-content, .events-header, .events-container, .features-container {
+    width: 100%;
+    max-width: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+  }
+  .homepage, .book-now-page, .contact-us-page, .event-details, .booking-form, .admin-panel {
+    width: 100%;
+    max-width: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+  }
+}
 /* Ensure #root and .App are centered and full width */
 #root, .App {
   max-width: 100% !important;
@@ -564,18 +600,21 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .navbar {
     display: none;
   }
   .hamburger {
-    display: flex;
+    display: flex !important;
   }
   .main-header {
-    padding: 0.5rem 0;
+    padding: 0;
+    margin: 0;
   }
   .header-content {
-    padding: 0 0.5rem;
+    padding: 0;
+    margin: 0;
+    gap: 0;
   }
 }
 /* Header styles */
@@ -588,12 +627,11 @@
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2.5rem;
+  margin: 0 ;
+  padding: 0 ;
   width: 100%;
-  gap: 2rem;
 }
 .logo-title {
   display: flex;
@@ -670,12 +708,13 @@
 /* Mobile menu overlay */
 .mobile-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.25);
-  z-index: 1199;
+  background: rgba(0,0,0,0.35);
+  z-index: 2000;
+  pointer-events: auto;
+  touch-action: none;
 }
 .navbar a {
   color: #007bff;
