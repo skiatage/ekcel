@@ -1,0 +1,798 @@
+/* Header Styles */
+.main-header {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.7rem 1.2rem;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+.header-logo {
+  width: 36px;
+  height: 36px;
+}
+.brand-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #007bff;
+  letter-spacing: 1px;
+}
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
+.main-nav a {
+  color: #222;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: #007bff;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.2rem;
+}
+.hamburger {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
+  position: relative;
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 26px;
+  height: 3px;
+  background: #007bff;
+  border-radius: 2px;
+  transition: 0.2s;
+}
+.hamburger::before {
+  top: -8px;
+}
+.hamburger::after {
+  top: 8px;
+}
+@media (max-width: 800px) {
+  .main-nav {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 180px;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-radius: 0 0 0 12px;
+    transform: translateX(120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s;
+    z-index: 99;
+  }
+  .main-nav.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav-toggle {
+    display: block;
+  }
+}
+/* Footer Styles */
+.footer {
+  background: #181818;
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 1rem auto;
+  padding: 0 1rem;
+}
+.footer-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.footer-logo {
+  width: 36px;
+  height: 36px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #007bff;
+}
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+.footer-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+.footer-social a:hover {
+  color: #007bff;
+}
+.footer small {
+  display: block;
+  margin-top: 0.5rem;
+  color: #bbb;
+}
+/* Upcoming events section */
+.events-section {
+  background: #f8f9fa;
+  padding: 2.5rem 0 2.5rem 0;
+}
+.events-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.events-header h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin: 0;
+}
+.events-link {
+  background: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.events-link:hover {
+  background: #007bff;
+  color: #fff;
+}
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.event-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  overflow: hidden;
+  min-width: 240px;
+  max-width: 270px;
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: box-shadow 0.2s;
+}
+.event-card:hover {
+  box-shadow: 0 4px 16px #0002;
+}
+.event-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.event-info {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.event-type {
+  background: #007bff;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.7rem;
+}
+.event-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: #222;
+}
+.event-date, .event-location {
+  font-size: 0.98rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+.event-cta {
+  margin-top: 1rem;
+  align-self: stretch;
+  text-align: center;
+}
+/* Features/benefits section */
+.features-section {
+  background: #fff;
+  padding: 2.5rem 0 2.5rem 0;
+  text-align: center;
+}
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover {
+  box-shadow: 0 4px 16px #0002;
+}
+.feature-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+.feature-card h3 {
+  color: #007bff;
+  margin-bottom: 0.7rem;
+  font-size: 1.18rem;
+}
+.feature-card p {
+  color: #333;
+  font-size: 1.05rem;
+}
+/* Hero section styles */
+.hero-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  margin-bottom: 0;
+}
+.hero-bg {
+  width: 100%;
+  min-height: 60vh;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+.hero-sub {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+.hero-cta {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.hero-cta:hover {
+  background: #0056b3;
+}
+
+/* About section styles */
+.about-section {
+  background: #f8f9fa;
+  padding: 3rem 0 2.5rem 0;
+  text-align: center;
+}
+.about-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.about-content h2 {
+  color: #007bff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about-content p {
+  font-size: 1.15rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.about-content .secondary {
+  background: #fff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 0.7rem 2rem;
+  font-size: 1.08rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.about-content .secondary:hover {
+  background: #007bff;
+  color: #fff;
+}
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1.2rem;
+  z-index: 1201;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #007bff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 16px #0002;
+  z-index: 1200;
+  transition: right 0.3s;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+.mobile-menu.open {
+  right: 0;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #007bff;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.mobile-nav a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.mobile-nav a:hover {
+  color: #0056b3;
+}
+.mobile-nav .admin-toggle {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+}
+.mobile-nav .admin-toggle:hover {
+  background: #444;
+}
+
+@media (max-width: 900px) {
+  .header-content {
+    padding: 0 1rem;
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .main-header {
+    padding: 0.5rem 0;
+  }
+  .header-content {
+    padding: 0 0.5rem;
+  }
+}
+/* Header styles */
+.main-header {
+  background: #fff;
+  box-shadow: 0 2px 12px #0001;
+  padding: 1.2rem 0 1.2rem 0;
+  margin-bottom: 2.5rem;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ekcel-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #007bff;
+  box-shadow: 0 1px 4px #0002;
+}
+.brand-title {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #007bff;
+  letter-spacing: 1px;
+}
+
+/* Footer styles */
+.main-footer {
+  background: #f1f5fb;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 3rem;
+  padding: 1.5rem 0 1rem 0;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.ekcel-logo-footer {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #007bff;
+  box-shadow: 0 1px 4px #0002;
+}
+.footer-links {
+  display: flex;
+  gap: 1.2rem;
+}
+.footer-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #0056b3;
+}
+.footer-copy {
+  color: #888;
+  font-size: 0.98rem;
+}
+/* Navbar styles */
+.navbar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+/* Mobile menu overlay */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  z-index: 1199;
+}
+.navbar a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.08rem;
+  transition: color 0.2s;
+}
+.navbar a:hover {
+  color: #0056b3;
+}
+.admin-toggle {
+  margin-left: auto;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.admin-toggle:hover {
+  background: #444;
+}
+
+/* Carousel styles */
+.image-carousel {
+  margin: 0 auto 2rem auto;
+  max-width: 700px;
+}
+.carousel .slide img {
+  border-radius: 10px;
+}
+
+/* Homepage widgets */
+.homepage-widgets {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.widget {
+  background: #f1f5fb;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  min-width: 220px;
+  box-shadow: 0 1px 4px #0001;
+}
+.widget h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+.widget blockquote {
+  font-style: italic;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+/* Book Now & Contact Us pages */
+.book-now-page, .contact-us-page {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.book-now-form input, .book-now-form textarea, .contact-form input, .contact-form textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.book-now-form button, .contact-form button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 2rem;
+  font-size: 1.08rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.book-now-form button:hover, .contact-form button:hover {
+  background: #0056b3;
+}
+.contact-details {
+  margin-top: 2rem;
+  text-align: left;
+  color: #333;
+}
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.3rem 0;
+  font-size: 1.05rem;
+}
+/* Homepage styles */
+.homepage {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 2.5rem 2rem 2rem 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.homepage h2 {
+  margin-top: 0.5rem;
+  color: #007bff;
+}
+.homepage ul {
+  margin: 1.5rem auto;
+  padding-left: 1.2rem;
+  text-align: left;
+}
+.homepage li {
+  margin-bottom: 0.5rem;
+  font-size: 1.08rem;
+}
+.homepage .primary, .primary {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.homepage .primary:hover, .primary:hover {
+  background: #0056b3;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f8f9fa;
+  margin: 0;
+  color: #222;
+}
+
+#root, .App {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+main {
+  min-height: 400px;
+}
+
+.event-list ul {
+  list-style: none;
+  padding: 0;
+}
+.event-item {
+  background: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.event-item:hover {
+  box-shadow: 0 4px 16px #0002;
+}
+
+.event-details, .booking-form, .admin-panel {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  margin-bottom: 2rem;
+}
+
+.booking-form input, .booking-form button, .admin-panel input, .admin-panel textarea, .admin-panel button {
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.booking-form button, .admin-panel button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.booking-form button:hover, .admin-panel button:hover {
+  background: #0056b3;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  margin-top: 2rem;
+}
